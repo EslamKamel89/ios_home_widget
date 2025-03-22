@@ -8,6 +8,7 @@
 import WidgetKit
 import AppIntents
 
+@available(iOS 16.0, *)
 struct ConfigurationAppIntent: WidgetConfigurationIntent {
     static var title: LocalizedStringResource { "Configuration" }
     static var description: IntentDescription { "This is an example widget." }
@@ -15,4 +16,8 @@ struct ConfigurationAppIntent: WidgetConfigurationIntent {
     // An example configurable parameter.
     @Parameter(title: "Favorite Emoji", default: "😃")
     var favoriteEmoji: String
+    
+    func perform() async -> some IntentResult {
+            return .result()
+        }
 }
